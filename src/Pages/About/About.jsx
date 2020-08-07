@@ -1,5 +1,6 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
+import AboutComponent from '../../Components/About';
 
 const About = () => {
   
@@ -9,7 +10,7 @@ const About = () => {
         <title>About</title>
       </Helmet>
       
-      <h1>About Component</h1>
+      <AboutComponent/>
     </div>
   )
 }
