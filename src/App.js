@@ -4,6 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import 'react-bulma-components/dist/react-bulma-components.min.css';
+
 
 import Home from './Pages/Home'
 import About from './Pages/About'
