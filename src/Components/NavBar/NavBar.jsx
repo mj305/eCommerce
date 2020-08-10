@@ -13,9 +13,9 @@ const NavBar = () => {
               </Link>
 
               <Link to='#' role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
               </Link>
           </div>
 
