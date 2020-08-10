@@ -2,15 +2,15 @@ import React from 'react'
 
 import Layout from '../Layout'
 
-const HomeComponent = () => {
+const LoginComponent = () => {
 
   return (
     <>
       <Layout>
-        <h3>Home Component</h3>
+        <h3>Login Component</h3>
       </Layout>
     </>
   )
 }
 
-export default HomeComponent
+export default LoginComponent

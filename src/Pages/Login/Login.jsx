@@ -1,9 +1,18 @@
 import React from 'react'
+import { Helmet } from "react-helmet";
+
+import LoginComponent from '../../Components/Login/LoginComponent'
 
 const Login = () => {
 
   return (
-    <h3>Login Page</h3>
+    <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+      
+      <LoginComponent/>
+    </>    
   )
 }
 
