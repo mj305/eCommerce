@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 
 import Layout from '../Layout'
 
+import styles from './SignupComponent.module.scss';
+
 const SignupComponent = () => {
 
   const { register, handleSubmit, errors } = useForm(); // initialise the hook
@@ -18,7 +20,7 @@ const SignupComponent = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
 
-              <div classNameName="field" >
+              <div className="field" >
                 <label className="label">Name</label>
                   <div className="control" >
                     <input name="firstname" className="input" type="text" placeholder="First Name..." ref={register} />
@@ -39,26 +41,29 @@ const SignupComponent = () => {
                     <i className="fas fa-exclamation-triangle"></i>
                   </span>
                 </div>
-                {/* <p className="help is-danger">This email is invalid</p> */}
               </div>
 
-              <div>
-                <label className="label">Password</label>
+              <div class="field">
+                  <label className="label">Password</label>
+                    <p class="control has-icons-left">
+                    <input class="input" type="password" placeholder="Enter Password"/>
+                      <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
+                </div>
 
-                  <div className="field">
-                    <div className="control">
-                      <input className="input" type="password" placeholder="Enter Password..."/>
-                    </div>
-                  </div>
+                <div class="field">
+                  <label className="label">Confirm Password</label>
+                    <p class="control has-icons-left">
+                    <input class="input" type="password" placeholder="Confirm Password"/>
+                      <span class="icon is-small is-left">
+                      <i class="fas fa-lock"></i>
+                      </span>
+                    </p>
+                </div>
 
-                  <div className="field">
-                    <div className="control">
-                      <input className="input" type="password" placeholder="Confirm Password..."/>
-                    </div>
-                  </div>
-              </div>
-
-              <input type="submit" />
+              <button type="submit" className={styles.error}>Submit</button>
 
             </form>
 

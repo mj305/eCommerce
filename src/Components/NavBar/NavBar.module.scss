@@ -1,0 +1,56 @@
+.navBarLogo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: .5rem;
+  margin-left: 1rem;
+}
+
+.navBarLogo:hover {
+  color: #EDA245;
+}
+
+.navBarLogo:active {
+  color: black;
+}
+
+.navBarLogo:visited {
+  color: black;
+}
+
+.button {
+  background-color: #EDA245;
+}
+
+.signupButton {
+  border: #EDA245 solid .01rem;
+  border-radius: .2rem;
+  background-color: #EDA245;
+  text-align: center;
+  color: white;
+  padding: .5rem;
+  margin: .5rem;
+  width: 5rem;
+}
+
+.signupButton:hover {
+  color: #fbe6d4;
+}
+
+.loginButton {
+  border: #f6ab6c solid .01rem;
+  border-radius: .2rem;
+  text-align: center;
+  color: #f6ab6c;
+  padding: .5rem;
+  margin: .5rem;  
+  width: 5rem;
+}
+
+.loginButton:hover {
+  color: #f6ab6c;
+  background-color: #ffecc7;
+}
+
+
+

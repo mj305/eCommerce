@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
 
-import SignupComponent from '../../Components/Signup/SignupComponent'
+import SignupComponent from '../../Components/Signup'
 
 
 const Signup = () => {

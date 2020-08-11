@@ -1,0 +1,19 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: #F9E6E6;
+}
+
+
+
+.cardWrapper {
+  max-width: 20rem;
+  padding: .5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  border: solid .2rem orange;
+}
