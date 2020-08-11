@@ -11,8 +11,10 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
+import ForgotPassword from './Pages/ForgotPassword'
+import ResetPassword from './Pages/ResetPassword'
 
-import {HOME, ABOUT, LOGIN, SIGNUP} from './Routes'
+import { HOME, ABOUT, LOGIN, SIGNUP, FORGOTPASSWORD, RESETPASSWORD } from './Routes'
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
           <Route path={LOGIN} component={Login} />
 
           <Route path={SIGNUP} component={Signup} />
+
+          <Route path={FORGOTPASSWORD} component={ForgotPassword} />
+
+          <Route path={RESETPASSWORD} component={ResetPassword} />
 
         </Switch>
       </Router>
