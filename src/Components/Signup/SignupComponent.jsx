@@ -17,8 +17,9 @@ const SignupComponent = () => {
   return (
     <>
       <Layout>
+            <h3>SIGNUP COMPONENT</h3>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className={`${styles.signupFormContainer}`} onSubmit={handleSubmit(onSubmit)}>
 
               <div className="field" >
                 <label className="label">Name</label>

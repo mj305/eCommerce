@@ -1,19 +1,64 @@
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
-  margin-top: 2rem;
-  background-color: #F9E6E6;
+.homeHeaderContainer {
+  background: rgb(249,230,230);
+  background: linear-gradient(0deg, rgba(249,230,230,1) 0%, rgba(234,154,150,1) 100%);
+  height: 100vh;
+  width: 100vw;
+
+}
+
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem;
+  font-weight: 550;
+  text-align: center;
+  align-self: center;
+  padding-top: 18%;
+}
+
+.homeContainer {
+	-webkit-animation: homeContainer 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: homeContainer 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes homeContainer {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes homeContainer {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
 }
 
 
 
-.cardWrapper {
-  max-width: 20rem;
-  padding: .5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background-color: white;
-  border: solid .2rem orange;
+.cardsContainer {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 2rem;
+ justify-content: space-between;
+ padding: 2rem;  
+}
+
+.cardContainer {
+  border: solid .09rem #EDA245;
+  border-radius: .2rem;
 }

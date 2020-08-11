@@ -8,28 +8,66 @@ const NavBar = () => {
   return (  
     <> 
       
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-            <div className="navbar-brand">
-                <Link to='/' className="navbar-item">
-                  <p className={styles.navBarLogo}> Reign </p>
+        <nav className={`navbar ${styles.navBarContainer}`} role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
+            <Link to='/' className="navbar-item" href="https://bulma.io">
+               <p className={styles.navBarLogo} > Reign </p>
+            </Link>
+
+            <Link role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </Link>
+          </div>
+
+          <div  className="navbar-menu">
+            <div className={`navbar-start`} >
+              <Link className={`navbar-item`}>
+                Our Services
+              </Link>
+
+              <Link className={`navbar-item`}>
+                Best Sellers
+              </Link>
+
+              <div className="navbar-item has-dropdown is-hoverable">
+                <Link className={`navbar-link`} >
+                  More
                 </Link>
 
-                <Link to='#' role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                  <span aria-hidden="true"></span>
-                </Link>
-            </div>
-
-            <div className="navbar-end navbar-menu" id="navbarBasicExample"> 
-                <div className="navbar-item">
-                    <div className="buttons">
-                        <Link to='/signup' className={styles.signupButton} /* className="button" */>Sign up</Link>
-                        <Link to='/login' className={styles.loginButton} /* className="button" */>Log in</Link>
-                    </div>
+                <div className="navbar-dropdown">
+                  <Link className={`navbar-item`}>
+                    About
+                  </Link>
+                  <Link className={`navbar-item`}>
+                    Jobs
+                  </Link>
+                  <Link className={`navbar-item`}>
+                    Contact
+                  </Link>
+                  <hr className="navbar-divider"/>
+                  <Link className={`navbar-item`}>
+                    Report an issue
+                  </Link>
                 </div>
+              </div>
             </div>
-        </nav>  
+
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <div className="buttons">
+                  <Link to='/signup' className={`button ${styles.signupButton}`}>
+                    <strong>Sign up</strong>
+                  </Link>
+                  <Link to='/login' className={`button ${styles.loginButton}`}>
+                    Log in
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
      
     </>
   )
