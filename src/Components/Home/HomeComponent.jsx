@@ -1,10 +1,13 @@
 import React from 'react'
 
+import { Link } from 'react-router-dom';
+
 import Layout from '../Layout'
 
 import styles from './HomeComponent.module.scss';
 
 import sugarScrub from './sugarScrub.png';
+import nailsCard from './nailsCard.png';
 
 const HomeComponent = () => {
 
@@ -23,21 +26,19 @@ const HomeComponent = () => {
                   <div className={`card ${styles.cardContainer}`} >
                     <div className="card-image" >
                       <figure className="image is-4by3">
-                        <img src={sugarScrub} alt=""/>
+                        <img src={nailsCard} alt=""/>
                       </figure>
                     </div>
 
                     <div className="card-content">
                       <div className="media">                    
                         <div className="media-content">
-                          <p className="title is-4"> Sugar Scrub 1 </p>
-                          <p className="subtitle is-6"> Body Care </p>
+                          <Link className={`title is-4 ${styles.cardGroup}`}> Services </Link>
                         </div>
                       </div>
 
                       <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. 
+                        Nails, Lashes, and Skin. 
                       </div>
                     </div>
                   </div>
@@ -56,114 +57,15 @@ const HomeComponent = () => {
                     <div className="card-content">
                       <div className="media">                    
                         <div className="media-content">
-                          <p className="title is-4"> Sugar Scrub 2 </p>
-                          <p className="subtitle is-6"> Body Care </p>
+                          <Link className={`title is-4 ${styles.cardGroup}`}> Products </Link>
                         </div>
                       </div>
 
                       <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. 
+                        Hair, Face, and Body.
                       </div>
                     </div>
                   </div>
-
-
-
-
-
-                  <div className={`card ${styles.cardContainer}`} >
-                    <div className="card-image" >
-                      <figure className="image is-4by3">
-                        <img src={sugarScrub} alt=""/>
-                      </figure>
-                    </div>
-
-                    <div className="card-content">
-                      <div className="media">                    
-                        <div className="media-content">
-                          <p className="title is-4"> Sugar Scrub 3 </p>
-                          <p className="subtitle is-6"> Body Care </p>
-                        </div>
-                      </div>
-
-                      <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. 
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div className={`card ${styles.cardContainer}`} >
-                    <div className="card-image" >
-                      <figure className="image is-4by3">
-                        <img src={sugarScrub} alt=""/>
-                      </figure>
-                    </div>
-
-                    <div className="card-content">
-                      <div className="media">                    
-                        <div className="media-content">
-                          <p className="title is-4"> Sugar Scrub 3 </p>
-                          <p className="subtitle is-6"> Body Care </p>
-                        </div>
-                      </div>
-
-                      <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. 
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div className={`card ${styles.cardContainer}`} >
-                    <div className="card-image" >
-                      <figure className="image is-4by3">
-                        <img src={sugarScrub} alt=""/>
-                      </figure>
-                    </div>
-
-                    <div className="card-content">
-                      <div className="media">                    
-                        <div className="media-content">
-                          <p className="title is-4"> Sugar Scrub 3 </p>
-                          <p className="subtitle is-6"> Body Care </p>
-                        </div>
-                      </div>
-
-                      <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. 
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div className={`card ${styles.cardContainer}`} >
-                    <div className="card-image" >
-                      <figure className="image is-4by3">
-                        <img src={sugarScrub} alt=""/>
-                      </figure>
-                    </div>
-
-                    <div className="card-content">
-                      <div className="media">                    
-                        <div className="media-content">
-                          <p className="title is-4"> Sugar Scrub 3 </p>
-                          <p className="subtitle is-6"> Body Care </p>
-                        </div>
-                      </div>
-
-                      <div className="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. 
-                      </div>
-                    </div>
-                  </div>
-
-
               </div>
 
       </Layout>

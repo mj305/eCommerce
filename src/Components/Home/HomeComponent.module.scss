@@ -50,14 +50,20 @@ h1 {
 
 
 .cardsContainer {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- grid-gap: 2rem;
- justify-content: space-between;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
  padding: 2rem;  
+ justify-items: center;
+ 
 }
 
 .cardContainer {
   border: solid .09rem #EDA245;
   border-radius: .2rem;
+  width: 30rem;
+}
+
+.cardGroup:hover {
+  color: #EDA245;
 }
