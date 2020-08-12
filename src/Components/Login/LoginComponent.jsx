@@ -2,17 +2,21 @@ import React from 'react'
 
 import { useForm } from 'react-hook-form';
 
+import firebase from '../../firebase.config';
+
 import Layout from '../Layout'
 
 import styles from './LoginComponent.module.scss';
 
 const LoginComponent = () => {
 
-  const { handleSubmit } = useForm(); // initialise the hook
+  const { register, handleSubmit/* , errors */ } = useForm(); // initialise the hook
   const onSubmit = (data) => {
-      console.log(data);
-      };
-
+    firebase.auth().signInWithEmailAndPassword(data.email, data.password)
+    .then((result) => {
+      console.log(result)
+    }).catch((error) => console.log(error))
+  };
 
   return (
     <>
@@ -24,7 +28,7 @@ const LoginComponent = () => {
               <div className="field">
                 <label className="label">Email</label>
                 <div className="control has-icons-left has-icons-right">
-                  <input className="input" type="email" placeholder="Enter email..."/>
+                  <input name="email" className="input" type="email" placeholder="Enter email..." ref={register({ required: true })}/>
                   <span className="icon is-small is-left">
                     <i className="fas fa-envelope"></i>
                   </span>
@@ -37,7 +41,7 @@ const LoginComponent = () => {
               <div class="field">
                   <label className="label">Password</label>
                     <p class="control has-icons-left">
-                    <input class="input" type="password" placeholder="Enter Password"/>
+                    <input name="password" class="input" type="password" placeholder="Enter Password" ref={register({ required: true })}/>
                       <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                       </span>
