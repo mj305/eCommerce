@@ -6,9 +6,8 @@ import {
 } from "react-router-dom";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 
-
-import Home from './Pages/Home'
 import About from './Pages/About'
+import Home from './Pages/Home'
 import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import ForgotPassword from './Pages/ForgotPassword'
@@ -36,6 +35,8 @@ function App() {
 
         </Switch>
       </Router>
+
+      
     </>
   );
 }
