@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
 
-import firebase from '../../firebase.config';
+/* import firebase from '../../firebase.config'; */
 
+import authContext from '../../Context/AuthContext/authContext'
 import Layout from '../Layout'
 
 import styles from './SignupComponent.module.scss';
 
 const SignupComponent = () => {
 
+  const {signUp} = useContext(authContext)
+
   const { register, handleSubmit/* , errors */ } = useForm(); // initialise the hook
   const onSubmit = (data) => {
-    firebase.auth().createUserWithEmailAndPassword(data.email, data.password)
-    .then((result) => {
-      console.log(result)
-    }).catch((error) => console.log(error))
+    signUp(data.email, data.password)
   };
 
 

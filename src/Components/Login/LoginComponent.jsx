@@ -38,12 +38,12 @@ const LoginComponent = () => {
                 </div>
               </div>
 
-              <div class="field">
+              <div className="field">
                   <label className="label">Password</label>
-                    <p class="control has-icons-left">
-                    <input name="password" class="input" type="password" placeholder="Enter Password" ref={register({ required: true })}/>
-                      <span class="icon is-small is-left">
-                      <i class="fas fa-lock"></i>
+                    <p className="control has-icons-left">
+                    <input name="password" className="input" type="password" placeholder="Enter Password" ref={register({ required: true })}/>
+                      <span className="icon is-small is-left">
+                      <i className="fas fa-lock"></i>
                       </span>
                     </p>
                 </div>

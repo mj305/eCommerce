@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 
+import AuthState from './Context/AuthContext/AuthState'
+
 import About from './Pages/About'
 import Home from './Pages/Home'
 import Login from './Pages/Login'
@@ -18,25 +20,25 @@ import { HOME, ABOUT, LOGIN, SIGNUP, FORGOTPASSWORD, RESETPASSWORD } from './Rou
 function App() {
   return (
     <>
-      <Router>
-        <Switch>
+    <AuthState>
+        <Router>
+          <Switch>
 
-          <Route exact path={HOME} component={Home} />
+            <Route exact path={HOME} component={Home} />
 
-          <Route path={ABOUT} component={About} />
+            <Route path={ABOUT} component={About} />
 
-          <Route path={LOGIN} component={Login} />
+            <Route path={LOGIN} component={Login} />
 
-          <Route path={SIGNUP} component={Signup} />
+            <Route path={SIGNUP} component={Signup} />
 
-          <Route path={FORGOTPASSWORD} component={ForgotPassword} />
+            <Route path={FORGOTPASSWORD} component={ForgotPassword} />
 
-          <Route path={RESETPASSWORD} component={ResetPassword} />
+            <Route path={RESETPASSWORD} component={ResetPassword} />
 
-        </Switch>
-      </Router>
-
-      
+          </Switch>
+        </Router>
+      </AuthState>
     </>
   );
 }
