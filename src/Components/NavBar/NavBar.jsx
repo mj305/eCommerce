@@ -14,7 +14,7 @@ const NavBar = () => {
                <p className={styles.navBarLogo} > Reign </p>
             </Link>
 
-            <Link role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <Link to='#' role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
@@ -23,31 +23,31 @@ const NavBar = () => {
 
           <div  className="navbar-menu">
             <div className={`navbar-start`} >
-              <Link className={`navbar-item`}>
+              <Link to='#' className={`navbar-item`}>
                 Our Services
               </Link>
 
-              <Link className={`navbar-item`}>
+              <Link to='#' className={`navbar-item`}>
                 Best Sellers
               </Link>
 
               <div className="navbar-item has-dropdown is-hoverable">
-                <Link className={`navbar-link`} >
+                <Link to='#' className={`navbar-link`} >
                   More
                 </Link>
 
                 <div className="navbar-dropdown">
-                  <Link className={`navbar-item`}>
+                  <Link to='#' className={`navbar-item`}>
                     About
                   </Link>
-                  <Link className={`navbar-item`}>
+                  <Link to='#' className={`navbar-item`}>
                     Jobs
                   </Link>
-                  <Link className={`navbar-item`}>
+                  <Link to='#' className={`navbar-item`}>
                     Contact
                   </Link>
                   <hr className="navbar-divider"/>
-                  <Link className={`navbar-item`}>
+                  <Link to='#' className={`navbar-item`}>
                     Report an issue
                   </Link>
                 </div>
