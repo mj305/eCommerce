@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 
-import AuthState from './Context/AuthContext/AuthState'
+import authContext from './Context/AuthContext/authContext'
 
 import About from './Pages/About'
 import Home from './Pages/Home'
@@ -18,9 +18,14 @@ import ResetPassword from './Pages/ResetPassword'
 import { HOME, ABOUT, LOGIN, SIGNUP, FORGOTPASSWORD, RESETPASSWORD } from './Routes'
 
 function App() {
+  const { verifyAuth } = useContext(authContext)
+
+  useEffect(() => {
+    verifyAuth()
+  }, [])
+
   return (
     <>
-    <AuthState>
         <Router>
           <Switch>
 
@@ -38,7 +43,6 @@ function App() {
 
           </Switch>
         </Router>
-      </AuthState>
     </>
   );
 }

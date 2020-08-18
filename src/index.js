@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App'
 import * as serviceWorker from './serviceWorker';
+import AuthState from './Context/AuthContext/AuthState'
+
 
 ReactDOM.render(
-    <App />,
+    <AuthState>
+      <App />
+    </AuthState>
+    ,
   document.getElementById('root')
 );
 

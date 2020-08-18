@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { useForm } from 'react-hook-form';
 
 import firebase from '../../firebase.config';
 
+import authContext from '../../Context/AuthContext/authContext'
 import Layout from '../Layout'
 
 import styles from './LoginComponent.module.scss';
 
 const LoginComponent = () => {
 
+  const {logIn} = useContext(authContext)
+
   const { register, handleSubmit/* , errors */ } = useForm(); // initialise the hook
+  
   const onSubmit = (data) => {
-    firebase.auth().signInWithEmailAndPassword(data.email, data.password)
-    .then((result) => {
-      console.log(result)
-    }).catch((error) => console.log(error))
+    logIn(data.email, data.password)
   };
 
   return (
