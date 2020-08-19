@@ -1,18 +1,18 @@
 .navGroup:hover {
-  color: #EDA245;
+  color: #eda245;
 }
 
 .navBarLogo {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   font-size: 2.2rem;
   color: black;
   font-weight: 400;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   margin-left: 1rem;
 }
 
 .navBarLogo:hover {
-  color: #EDA245;
+  color: #eda245;
 }
 
 .navBarLogo:active {
@@ -24,24 +24,23 @@
 }
 
 .signupButton {
-  border: white solid .01rem;
-  background-color: #EDA245;
-  color: white;  
+  border: white solid 0.01rem;
+  background-color: #eda245;
+  color: white;
 }
 
 .signupButton:hover {
-  border: #fbe6d4 solid .01rem;
+  border: #fbe6d4 solid 0.01rem;
   color: #fbe6d4;
 }
 
 .loginButton {
-  border: #f6ab6c solid .01rem;
+  border: #f6ab6c solid 0.01rem;
   color: #f6ab6c;
 }
 
 .loginButton:hover {
-  border: #f6ab6c solid .01rem;  
+  border: #f6ab6c solid 0.01rem;
   background-color: #ffecc7;
   color: #f6ab6c;
 }
-

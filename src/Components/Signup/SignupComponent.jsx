@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 /* import firebase from '../../firebase.config'; */
 
@@ -10,12 +11,16 @@ import Layout from "../Layout";
 import styles from "./SignupComponent.module.scss";
 
 const SignupComponent = () => {
-  const { signUp, loading } = useContext(authContext);
+  const { signUp, loading, errors } = useContext(authContext);
 
   const { register, handleSubmit /* , errors */ } = useForm(); // initialise the hook
   const onSubmit = (data) => {
     signUp(data.email, data.password);
   };
+
+  if (errors) {
+    toast("User already exist");
+  }
 
   return (
     <>
@@ -26,15 +31,6 @@ const SignupComponent = () => {
           className={`${styles.signupFormContainer}`}
           onSubmit={handleSubmit(onSubmit)}
         >
-          {/*               <div className="field" >
-                <label className="label">Name</label>
-                  <div className="control" >
-                    <input name="firstname" className="input" type="text" placeholder="First Name..." ref={register} />
-                    <input name="lastname" className="input" type="text" placeholder="Last Name..." ref={register({ required: true })} />
-                    {errors.lastname && 'Last name is required.'}
-                  </div>
-              </div> */}
-
           <div className="field">
             <label className="label">Email</label>
             <div className="control has-icons-left has-icons-right">

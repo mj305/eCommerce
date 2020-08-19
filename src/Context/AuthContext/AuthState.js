@@ -8,6 +8,7 @@ import {
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
+  CLEAR_ERRORS,
 } from "./types";
 
 import authReducer from "./authReducer";
@@ -34,7 +35,8 @@ const AuthState = (props) => {
         dispatch({ type: SIGNUP_SUCCESS, payload: result });
       })
       .catch((error) => {
-        dispatch({ type: SIGNUP_FAILURE, payload: error });
+        dispatch({ type: SIGNUP_FAILURE, payload: error.message });
+        dispatch({ type: CLEAR_ERRORS });
       });
   };
 
@@ -48,7 +50,9 @@ const AuthState = (props) => {
         dispatch({ type: LOGIN_SUCCESS, payload: result });
       })
       .catch((error) => {
-        dispatch({ type: LOGIN_FAILURE, payload: error });
+        console.log(error.message);
+        dispatch({ type: LOGIN_FAILURE, payload: error.message });
+        dispatch({ type: CLEAR_ERRORS });
       });
   };
 

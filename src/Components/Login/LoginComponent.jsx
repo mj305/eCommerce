@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
-import firebase from "../../firebase.config";
+/* import firebase from "../../firebase.config"; */
 
 import authContext from "../../Context/AuthContext/authContext";
 import Layout from "../Layout";
@@ -10,9 +10,13 @@ import Layout from "../Layout";
 import styles from "./LoginComponent.module.scss";
 
 const LoginComponent = () => {
-  const { logIn } = useContext(authContext);
+  const { logIn, errors } = useContext(authContext);
 
   const { register, handleSubmit /* , errors */ } = useForm(); // initialise the hook
+
+  if (errors) {
+    toast("Invalid Email or Password");
+  }
 
   const onSubmit = (data) => {
     logIn(data.email, data.password);
