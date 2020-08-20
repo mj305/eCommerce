@@ -31,8 +31,24 @@ const AuthState = (props) => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        console.log(result);
-        dispatch({ type: SIGNUP_SUCCESS, payload: result });
+        console.log(result.user.email);
+        console.log(result.user.uid);
+        fetch("http://localhost:4000/signUp", {
+          method: "POST",
+          body: JSON.stringify({
+            email: result.user.email,
+            firebaseID: result.user.uid,
+          }),
+        })
+          .then((data) => {
+            console.log(data);
+            dispatch({ type: SIGNUP_SUCCESS, payload: result });
+          })
+          .catch((error) => {
+            console.log(error);
+            dispatch({ type: SIGNUP_FAILURE, payload: error.message });
+            dispatch({ type: CLEAR_ERRORS });
+          });
       })
       .catch((error) => {
         dispatch({ type: SIGNUP_FAILURE, payload: error.message });
