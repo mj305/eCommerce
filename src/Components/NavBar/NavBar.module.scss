@@ -12,7 +12,7 @@
 }
 
 .navBarLogo:hover {
-  color: #eda245;
+  color: #eda245 !important;
 }
 
 .navBarLogo:active {
@@ -25,22 +25,22 @@
 
 .signupButton {
   border: white solid 0.01rem;
-  background-color: #eda245;
-  color: white;
+  background-color: #eda245 !important;
+  color: white !important;
 }
 
 .signupButton:hover {
-  border: #fbe6d4 solid 0.01rem;
-  color: #fbe6d4;
+  border: #fbe6d4 solid 0.01rem !important;
+  color: #fbe6d4 !important;
 }
 
 .loginButton {
-  border: #f6ab6c solid 0.01rem;
-  color: #f6ab6c;
+  border: #f6ab6c solid 0.01rem !important;
+  color: #f6ab6c !important;
 }
 
 .loginButton:hover {
-  border: #f6ab6c solid 0.01rem;
-  background-color: #ffecc7;
-  color: #f6ab6c;
+  border: #f6ab6c solid 0.01rem !important;
+  background-color: #ffecc7 !important;
+  color: #f6ab6c !important;
 }

@@ -1,4 +1,5 @@
 import React, { useReducer } from "react";
+import axios from "axios";
 import {
   AUTH_REQUEST,
   SIGNUP_FAILURE,
@@ -33,13 +34,12 @@ const AuthState = (props) => {
       .then((result) => {
         console.log(result.user.email);
         console.log(result.user.uid);
-        fetch("http://localhost:4000/signUp", {
-          method: "POST",
-          body: JSON.stringify({
+
+        axios
+          .post("http://localhost:4000/signUp", {
             email: result.user.email,
             firebaseID: result.user.uid,
-          }),
-        })
+          })
           .then((data) => {
             console.log(data);
             dispatch({ type: SIGNUP_SUCCESS, payload: result });
