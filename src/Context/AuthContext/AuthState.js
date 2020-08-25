@@ -73,9 +73,11 @@ const AuthState = (props) => {
   };
 
   const verifyAuth = async () => {
+    dispatch({ type: AUTH_REQUEST });
     firebase.auth().onAuthStateChanged((user) => {
       if (user !== null) {
         console.log("You are logged in...");
+        dispatch({ type: LOGIN_SUCCESS, payload: user });
       } else {
         console.log("Not Logged in...");
       }
@@ -94,6 +96,20 @@ const AuthState = (props) => {
       .catch((error) => dispatch({ type: LOGOUT_FAILURE }));
   };
 
+  const passwordResetEmail = (email) => {
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then((response) => {
+        console.log(response);
+        // Email sent.
+      })
+      .catch((error) => {
+        console.log(error);
+        // An error happened.
+      });
+  };
+
   return (
     <authContext.Provider
       value={{
@@ -105,6 +121,7 @@ const AuthState = (props) => {
         logIn,
         logOut,
         verifyAuth,
+        passwordResetEmail,
       }}
     >
       {props.children}

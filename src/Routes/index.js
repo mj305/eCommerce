@@ -1,12 +1,11 @@
-export const HOME = '/';
+export const HOME = "/";
 
-export const ABOUT = '/about';
+export const ABOUT = "/about";
 
-export const SIGNUP = '/signup';
+export const SIGNUP = "/signup";
 
-export const LOGIN = '/login';
+export const LOGIN = "/login";
 
-export const FORGOTPASSWORD = '/forgotpassword';
+export const FORGOTPASSWORD = "/forgotpassword";
 
-export const RESETPASSWORD = '/resetpassword';
-
+export const RESETPASSWORD = "/resetpassword";

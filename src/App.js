@@ -1,6 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import ProtectedRoute from "./Routes/ProtectedRoute";
+import UnprotectedRoute from "./Routes/UnprotectedRoute";
 
 import authContext from "./Context/AuthContext/authContext";
 
@@ -24,7 +26,7 @@ import "react-bulma-components/dist/react-bulma-components.min.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const { verifyAuth } = useContext(authContext);
+  const { verifyAuth, isAuthenticated, loading } = useContext(authContext);
 
   useEffect(() => {
     verifyAuth();
@@ -38,9 +40,19 @@ function App() {
 
           <Route path={ABOUT} component={About} />
 
-          <Route path={LOGIN} component={Login} />
+          <UnprotectedRoute
+            loading={loading}
+            path={LOGIN}
+            component={Login}
+            isAuthenticated={isAuthenticated}
+          />
 
-          <Route path={SIGNUP} component={Signup} />
+          <UnprotectedRoute
+            loading={loading}
+            path={SIGNUP}
+            component={Signup}
+            isAuthenticated={isAuthenticated}
+          />
 
           <Route path={FORGOTPASSWORD} component={ForgotPassword} />
 
