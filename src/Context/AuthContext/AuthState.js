@@ -10,6 +10,7 @@ import {
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
   CLEAR_ERRORS,
+  NOT_LOGGEDIN,
 } from "./types";
 
 import authReducer from "./authReducer";
@@ -79,6 +80,7 @@ const AuthState = (props) => {
         console.log("You are logged in...");
         dispatch({ type: LOGIN_SUCCESS, payload: user });
       } else {
+        dispatch({ type: NOT_LOGGEDIN });
         console.log("Not Logged in...");
       }
     });

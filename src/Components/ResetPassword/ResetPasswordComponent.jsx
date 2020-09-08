@@ -25,25 +25,6 @@ const ResetPasswordComponent = () => {
           className={`${styles.resetFormContainer}`}
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control has-icons-left has-icons-right">
-              <input
-                name="email"
-                className="input"
-                type="email"
-                placeholder="Enter email..."
-                ref={register({ required: true })}
-              />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
-              </span>
-              <span className="icon is-small is-right">
-                <i className="fas fa-exclamation-triangle"></i>
-              </span>
-            </div>
-          </div>
-
           <div class="field">
             <label className="label">New Password</label>
             <p class="control has-icons-left">

@@ -15,3 +15,5 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_FAILURE = "LOGOUT_FAILURE";
 
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+
+export const NOT_LOGGEDIN = "NOT_LOGGEDIN";

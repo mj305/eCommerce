@@ -8,6 +8,7 @@ import {
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
   CLEAR_ERRORS,
+  NOT_LOGGEDIN,
 } from "./types";
 
 export default (state, { type, payload }) => {
@@ -51,6 +52,14 @@ export default (state, { type, payload }) => {
         user: null,
         loading: true,
         errors: payload,
+      };
+    case NOT_LOGGEDIN:
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+        loading: false,
+        errors: null,
       };
     case LOGOUT_REQUEST:
       return {

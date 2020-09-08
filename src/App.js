@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import ProtectedRoute from "./Routes/ProtectedRoute";
+/* import ProtectedRoute from "./Routes/ProtectedRoute"; */
 import UnprotectedRoute from "./Routes/UnprotectedRoute";
 
 import authContext from "./Context/AuthContext/authContext";
