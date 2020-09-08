@@ -33,7 +33,7 @@ const ProductComponent = () => {
   const results = product.data.map((value) => {
     return (
       <>
-        <div className={`${styles.cardsContainer}`}>
+        <div className={` ${styles.rotatePicture} ${styles.cardsContainer}`}>
           <div className={`card ${styles.cardContainer}`}>
             <div className="card-image">
               <figure className="image is-4by3">
