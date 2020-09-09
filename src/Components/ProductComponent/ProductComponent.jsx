@@ -51,8 +51,7 @@ const ProductComponent = () => {
               </div>
 
               <div className="content"> {value.description} </div>
-              <div className="content"> ${value.price} </div>
-              <div> Only {value.quantity} left! </div>
+              <div className="content"> {value.price} </div>
             </div>
           </div>
         </div>

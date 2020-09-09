@@ -1,8 +1,31 @@
 .footerContainer {
   position: absolute;
- /*  bottom: 0; */
+  /*  bottom: 0; */
   width: 100%;
   height: 5rem;
+}
+
+.footerIcons {
+  display: flex;
+  justify-content: space-around;
+  /*   padding: 2rem;
+  margin: 2rem; */
+  color: #eda245;
+  margin-bottom: 2rem;
+}
+
+.footerIcons:link {
+  color: #f08a5d;
+}
+
+/* visited link */
+.footerIcons:visited {
+  color: #fa7d09;
+}
+
+/* mouse over link */
+.footerIcons:hover {
+  color: #fecb89;
 }
 
 .footerAuthor {
@@ -10,5 +33,5 @@
 }
 
 .footerAuthor:hover {
-  color: #EDA245;
+  color: #fecb89;
 }

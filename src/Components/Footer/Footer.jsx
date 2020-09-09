@@ -1,23 +1,40 @@
-import React from 'react';
+import React from "react";
 
-import styles from './Footer.module.scss';
+import { Link } from "react-router-dom";
 
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  
   return (
-
     <>
-      <footer className={`footer ${styles.footerContainer}`}>
-        <div className="content has-text-centered">
+      <footer className={`${styles.footerContainer}`}>
+        <div className={`content has-text-centered footer`}>
+          <div className={`${styles.footerIcons}`}>
+            <Link>
+              <i className={`fab fa-linkedin ${styles.footerIcons}`}></i>
+            </Link>
+            <Link>
+              <i className={`fab fa-github ${styles.footerIcons}`}></i>
+            </Link>
+            <Link>
+              <i className={`fas fa-portrait ${styles.footerIcons}`}></i>
+            </Link>
+          </div>
           <p>
             <strong> Created by </strong>
-            <a className={`${styles.footerAuthor}`} href="https://mariabeckles.herokuapp.com/" target='blank'> Maria Beckles </a>
+            <Link
+              className={`${styles.footerAuthor}`}
+              href="https://mariabeckles.herokuapp.com/"
+              target="blank"
+            >
+              {" "}
+              Me{" "}
+            </Link>
           </p>
         </div>
       </footer>
-    </>    
-  )
-}
+    </>
+  );
+};
 
 export default Footer;
