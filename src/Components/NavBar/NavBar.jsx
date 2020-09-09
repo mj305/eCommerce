@@ -91,6 +91,11 @@ const NavBar = () => {
                     >
                       Log in
                     </Link>
+                    <div>
+                      <Link
+                        className={`fas fa-shopping-cart ${styles.cartIcon}`}
+                      ></Link>
+                    </div>
                   </>
                 )}
               </div>

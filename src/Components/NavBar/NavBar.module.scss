@@ -44,3 +44,15 @@
   background-color: #ffecc7 !important;
   color: #f6ab6c !important;
 }
+
+.cartIcon {
+  font-size: 1.2rem;
+  text-align: center;
+  align-content: center;
+  color: #f6ab6c;
+  cursor: pointer;
+}
+
+.cartIcon:hover {
+  color: #fecb89;
+}
