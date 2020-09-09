@@ -56,3 +56,7 @@
 .cartIcon:hover {
   color: #fecb89;
 }
+
+.cartIcon:active {
+  transform: translateY(1px);
+}
