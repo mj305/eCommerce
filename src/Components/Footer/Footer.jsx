@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
@@ -13,10 +11,10 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/mariabeckles/" target="blank">
               <i className={`fab fa-linkedin ${styles.footerIcons}`}></i>
             </a>
-            <a href="https://twitter.com/MalyMjo">
+            <a href="https://github.com/mj305" target="blank">
               <i className={`fab fa-github ${styles.footerIcons}`}></i>
             </a>
-            <a>
+            <a href="https://twitter.com/MalyMjo" target="blank">
               <i className={`fab fa-twitter ${styles.footerIcons}`}></i>
             </a>
           </div>

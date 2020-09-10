@@ -89,13 +89,13 @@ const NavBar = () => {
                       to="/login"
                       className={`button ${styles.loginButton}`}
                     >
-                      Log in
+                      Login
                     </Link>
-                    <div>
-                      <Link
-                        className={`fas fa-shopping-cart ${styles.cartIcon}`}
-                      ></Link>
-                    </div>
+
+                    <Link
+                      to="/forgotpassword"
+                      className={`fas fa-shopping-cart ${styles.cartIcon}`}
+                    ></Link>
                   </>
                 )}
               </div>

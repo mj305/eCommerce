@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 /* import firebase from '../../firebase.config'; */
 
@@ -85,6 +85,9 @@ const SignupComponent = () => {
           <button type="submit" className={styles.error}>
             Submit
           </button>
+          <div>
+            <Link to="/login">Login</Link>
+          </div>
         </form>
       </Layout>
     </>
