@@ -10,21 +10,24 @@ const Footer = () => {
       <footer className={`${styles.footerContainer}`}>
         <div className={`content has-text-centered footer`}>
           <div className={`${styles.footerIcons}`}>
-            <Link>
+            <Link to="https://www.linkedin.com/in/mariabeckles/" target="blank">
               <i className={`fab fa-linkedin ${styles.footerIcons}`}></i>
             </Link>
             <Link>
               <i className={`fab fa-github ${styles.footerIcons}`}></i>
             </Link>
             <Link>
-              <i className={`fas fa-portrait ${styles.footerIcons}`}></i>
+              <i
+                to="https://twitter.com/MalyMjo"
+                className={`fab fa-twitter ${styles.footerIcons}`}
+              ></i>
             </Link>
           </div>
           <p>
             <strong> Created by </strong>
             <Link
               className={`${styles.footerAuthor}`}
-              href="https://mariabeckles.herokuapp.com/"
+              to="https://mariabeckles.herokuapp.com/"
               target="blank"
             >
               {" "}

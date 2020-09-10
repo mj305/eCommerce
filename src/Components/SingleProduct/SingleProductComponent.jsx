@@ -5,7 +5,7 @@ import Layout from "../Layout";
 
 import styles from "./SingleProductComponent.module.scss";
 
-import nailsCard from "./nailsCard.png";
+import sugarScrub from "./sugarScrub.png";
 
 const SingleProductComponent = () => {
   const [product, setProduct] = useState({});
@@ -39,7 +39,7 @@ const SingleProductComponent = () => {
       <Layout>
         <div className={`${styles.productContainer}`}>
           <div>
-            <img src={nailsCard} className={`${styles.productImage}`} />
+            <img src={sugarScrub} className={`${styles.productImage}`} />
           </div>
 
           <div className={`${styles.textContainer}`}>
