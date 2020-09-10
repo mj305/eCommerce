@@ -13,6 +13,7 @@ import Signup from "./Pages/Signup";
 import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import Product from "./Pages/Product";
+import Cart from "./Pages/Cart";
 
 import {
   HOME,
@@ -22,10 +23,12 @@ import {
   FORGOTPASSWORD,
   RESETPASSWORD,
   SINGLEPRODUCT,
+  CART,
 } from "./Routes";
 
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import "react-toastify/dist/ReactToastify.css";
+import CartComponent from "./Components/Cart";
 
 function App() {
   const { verifyAuth, isAuthenticated, loading } = useContext(authContext);
@@ -61,6 +64,8 @@ function App() {
           <Route path={RESETPASSWORD} component={ResetPassword} />
 
           <Route path={SINGLEPRODUCT} component={Product} />
+
+          <Route path={CART} component={Cart} />
         </Switch>
       </Router>
       <ToastContainer />

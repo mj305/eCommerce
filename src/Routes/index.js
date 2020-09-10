@@ -11,3 +11,5 @@ export const FORGOTPASSWORD = "/forgotpassword";
 export const RESETPASSWORD = "/resetpassword";
 
 export const SINGLEPRODUCT = "/product/:id";
+
+export const CART = "/cart";

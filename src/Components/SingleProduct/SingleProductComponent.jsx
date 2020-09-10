@@ -11,6 +11,20 @@ const SingleProductComponent = () => {
   const [product, setProduct] = useState({});
   const { id } = useParams();
 
+  const [count, setCount] = useState(1);
+
+  const handleIncrease = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrease = () => {
+    if (count <= 1) {
+      setCount(count);
+    } else {
+      setCount(count - 1);
+    }
+  };
+
   useEffect(() => {
     const fetchProduct = () => {
       fetch(`http://localhost:4000/viewProduct/${id}`)
@@ -51,8 +65,22 @@ const SingleProductComponent = () => {
 
             <div className={`${styles.quantityContainer}`}>
               <p>Quantity</p>
-              <input placeholder="0" className={`${styles.quantityInput}`} />
-              <button className={`${styles.quantityButton}`}>+</button>
+              <button
+                disabled={count === 1}
+                onClick={handleDecrease}
+                className={`${styles.quantityButton}`}
+              >
+                {" "}
+                -{" "}
+              </button>
+              <input value={count} className={`${styles.quantityInput}`} />
+              <button
+                onClick={handleIncrease}
+                className={`${styles.quantityButton}`}
+              >
+                {" "}
+                +{" "}
+              </button>
             </div>
 
             <button className={`${styles.addCartButton}`}>Add To Cart</button>
