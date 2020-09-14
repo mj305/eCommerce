@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import CartContext from "../../Context/CartContext/cartContext";
 
 import Layout from "../Layout";
 
@@ -8,6 +9,7 @@ import styles from "./SingleProductComponent.module.scss";
 import sugarScrub from "./sugarScrub.png";
 
 const SingleProductComponent = () => {
+  const { addToCart, loading } = useContext(CartContext);
   const [product, setProduct] = useState({});
   const { id } = useParams();
 
@@ -15,6 +17,10 @@ const SingleProductComponent = () => {
 
   const handleIncrease = () => {
     setCount(count + 1);
+  };
+
+  const handleCart = () => {
+    addToCart(product, count);
   };
 
   const handleDecrease = () => {
@@ -83,7 +89,9 @@ const SingleProductComponent = () => {
               </button>
             </div>
 
-            <button className={`${styles.addCartButton}`}>Add To Cart</button>
+            <button onClick={handleCart} className={`${styles.addCartButton}`}>
+              Add To Cart
+            </button>
           </div>
         </div>
       </Layout>

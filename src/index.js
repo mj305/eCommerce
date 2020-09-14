@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App'
-import * as serviceWorker from './serviceWorker';
-import AuthState from './Context/AuthContext/AuthState'
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import AuthState from "./Context/AuthContext/AuthState";
+import CartState from "./Context/CartContext/CartState";
 
 ReactDOM.render(
-    <AuthState>
+  <AuthState>
+    <CartState>
       <App />
-    </AuthState>
-    ,
-  document.getElementById('root')
+    </CartState>
+  </AuthState>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

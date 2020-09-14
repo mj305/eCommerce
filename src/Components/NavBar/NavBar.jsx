@@ -92,10 +92,9 @@ const NavBar = () => {
                       Login
                     </Link>
 
-                    <Link
-                      to="/forgotpassword"
-                      className={`fas fa-shopping-cart ${styles.cartIcon}`}
-                    ></Link>
+                    <Link to="/cart" className={` ${styles.cartIcon}`}>
+                      <i class="fas fa-shopping-cart"></i>
+                    </Link>
                   </>
                 )}
               </div>
