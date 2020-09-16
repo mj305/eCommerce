@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import authContext from "../../Context/AuthContext/authContext";
+import cartContext from "../../Context/CartContext/cartContext";
 import styles from "./NavBar.module.scss";
 
 const NavBar = () => {
   const { isAuthenticated, logOut } = useContext(authContext);
+
+  const { cartCount, countCartItems } = useContext(cartContext);
+  console.log(cartCount);
+  console.log(countCartItems());
 
   return (
     <>
@@ -94,6 +99,7 @@ const NavBar = () => {
 
                     <Link to="/cart" className={` ${styles.cartIcon}`}>
                       <i class="fas fa-shopping-cart"></i>
+                      {countCartItems()}
                     </Link>
                   </>
                 )}

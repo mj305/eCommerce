@@ -1,6 +1,6 @@
-import { CART_REQUEST, CART_SUCCESS, CART_FAILURE } from "./types";
+import { CART_REQUEST, CART_SUCCESS, CART_FAILURE, CART_COUNT } from "./types";
 
-export default (state, { type, payload }) => {
+export default (state, { type, payload, countPayload }) => {
   switch (type) {
     case CART_REQUEST:
       return {
@@ -8,6 +8,7 @@ export default (state, { type, payload }) => {
         loading: true,
         errors: null,
         items: [],
+        cartCount: null,
       };
     case CART_SUCCESS:
       return {
@@ -15,6 +16,7 @@ export default (state, { type, payload }) => {
         loading: false,
         errors: null,
         items: payload,
+        cartCount: countPayload,
       };
     case CART_FAILURE:
       return {
@@ -22,6 +24,7 @@ export default (state, { type, payload }) => {
         loading: false,
         errors: payload,
         items: [],
+        cartCount: null,
       };
     default:
       return state;

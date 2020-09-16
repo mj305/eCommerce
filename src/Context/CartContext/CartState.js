@@ -44,6 +44,7 @@ const CartState = (props) => {
     loading: false,
     errors: null,
     items: [],
+    cartCount: 0,
   };
 
   const [state, dispatch] = useReducer(cartReducer, initialState);
@@ -58,10 +59,25 @@ const CartState = (props) => {
       price: product.data.price,
     };
     SaveDataToLocalStorage(cart);
+    dispatch({
+      type: CART_SUCCESS,
+      payload: JSON.parse(localStorage.getItem("cart")) || [],
+      countPayload: countCartItems(),
+    });
   };
 
   const fetchCartItems = () => {
-    dispatch({ type: CART_REQUEST });
+    dispatch({
+      type: CART_SUCCESS,
+      payload: JSON.parse(localStorage.getItem("cart")) || [],
+      countPayload: countCartItems(),
+    });
+  };
+
+  const countCartItems = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const total = cart.reduce((n, { count }) => n + count, 0);
+    return total;
   };
 
   return (
@@ -72,6 +88,8 @@ const CartState = (props) => {
         items: state.items,
         addToCart,
         fetchCartItems,
+        cartCount: state.cartCount,
+        countCartItems,
       }}
     >
       {props.children}

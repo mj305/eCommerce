@@ -10,15 +10,18 @@ const CartComponent = () => {
 
   console.log(cart);
 
+  let subTotal = 0;
+
   const results = cart.map((value) => {
-    const total = value.price * value.count;
+    const productTotal = value.price * value.count;
+    subTotal += productTotal;
 
     return (
       <>
         <p> Product {value.title} </p>
         <p> Price {value.price} </p>
         <p> Quantity {value.count} </p>
-        <p> Total {total} </p>
+        <p> ${productTotal} </p>
       </>
     );
   });
@@ -27,6 +30,7 @@ const CartComponent = () => {
     <Layout>
       <h1>Cart</h1>
       <div>{results}</div>
+      <div>Grand Total ${subTotal} </div>
     </Layout>
   );
 };
