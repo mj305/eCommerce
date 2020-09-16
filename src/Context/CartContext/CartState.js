@@ -7,24 +7,20 @@ import cartContext from "./cartContext";
 
 /* Saving in Local Storage */
 const SaveDataToLocalStorage = (data) => {
-  let a = [];
+  let cart = [];
   // Parse the serialized data back into an aray of objects
-  a = JSON.parse(localStorage.getItem("cart")) || [];
-  a.unshift(data);
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+  /*  a.unshift(data); */
 
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  const cartCount = cart.some(
-    (element) => element.id === "5f577861ac7c5301d8ea4ba6"
-  );
+  /*   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+   */
+  const cartCount = cart.some((element) => element.id === data.id);
 
   console.log(cartCount);
 
   if (cartCount) {
     //Find index of specific object using findIndex method.
-    const objIndex = cart.findIndex(
-      (obj) => obj.id == "5f577861ac7c5301d8ea4ba6"
-    );
+    const objIndex = cart.findIndex((obj) => obj.id === data.id);
 
     //Log object to Console.
     console.log("Before update: ", cart[objIndex]);
@@ -34,9 +30,12 @@ const SaveDataToLocalStorage = (data) => {
 
     //Log object to console again.
     console.log("After update: ", cart[objIndex]);
+    localStorage.setItem("cart", JSON.stringify(cart));
   } else {
     // Re-serialize the array back into a string and store it in localStorage
-    localStorage.setItem("cart", JSON.stringify(a));
+
+    cart.unshift(data);
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 };
 
@@ -59,8 +58,6 @@ const CartState = (props) => {
       price: product.data.price,
     };
     SaveDataToLocalStorage(cart);
-    console.log(product);
-    console.log(count);
   };
 
   const fetchCartItems = () => {
