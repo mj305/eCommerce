@@ -80,6 +80,34 @@ const CartState = (props) => {
     return total;
   };
 
+  const increaseCount = (data) => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const objIndex = cart.findIndex((obj) => obj.id === data.id);
+
+    //Update object's name property.
+    cart[objIndex].count += 1;
+
+    //Log object to console again.
+    console.log("After update: ", cart[objIndex]);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    fetchCartItems();
+  };
+
+  const decreaseCount = (data) => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const objIndex = cart.findIndex((obj) => obj.id === data.id);
+
+    //Update object's name property.
+    cart[objIndex].count -= 1;
+
+    //Log object to console again.
+    console.log("After update: ", cart[objIndex]);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    fetchCartItems();
+  };
+
   return (
     <cartContext.Provider
       value={{
@@ -90,6 +118,8 @@ const CartState = (props) => {
         fetchCartItems,
         cartCount: state.cartCount,
         countCartItems,
+        decreaseCount,
+        increaseCount,
       }}
     >
       {props.children}

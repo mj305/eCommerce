@@ -15,12 +15,12 @@ const SingleProductComponent = () => {
 
   const [count, setCount] = useState(1);
 
-  const handleIncrease = () => {
-    setCount(count + 1);
-  };
-
   const handleCart = () => {
     addToCart(product, count);
+  };
+
+  const handleIncrease = () => {
+    setCount(count + 1);
   };
 
   const handleDecrease = () => {

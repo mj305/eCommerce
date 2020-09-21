@@ -1,18 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import cartContext from "../../Context/CartContext/cartContext";
 import Layout from "../Layout";
 
 const CartComponent = () => {
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    setCart(JSON.parse(localStorage.getItem("cart")) || []);
-  }, []);
+  const { increaseCount, decreaseCount, fetchCartItems, items } = useContext(
+    cartContext
+  );
 
-  console.log(cart);
+  useEffect(() => {
+    fetchCartItems();
+    /*     setCart(JSON.parse(localStorage.getItem("cart")) || []);
+     */
+  }, []);
 
   let subTotal = 0;
 
-  const results = cart.map((value) => {
+  const results = items.map((value) => {
+    console.log(value);
     const productTotal = value.price * value.count;
     subTotal += productTotal;
 
@@ -20,7 +26,10 @@ const CartComponent = () => {
       <>
         <p> Product {value.title} </p>
         <p> Price {value.price} </p>
-        <p> Quantity {value.count} </p>
+        <p> Quantity </p>
+        <button onClick={() => decreaseCount(value)}>-</button>
+        <div>{value.count}</div>
+        <button onClick={() => increaseCount(value)}>+</button>
         <p> ${productTotal} </p>
       </>
     );

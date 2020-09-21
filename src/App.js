@@ -14,6 +14,7 @@ import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
+import Checkout from "./Pages/Checkout";
 
 import {
   HOME,
@@ -24,6 +25,7 @@ import {
   RESETPASSWORD,
   SINGLEPRODUCT,
   CART,
+  CHECKOUT,
 } from "./Routes";
 
 import "react-bulma-components/dist/react-bulma-components.min.css";
@@ -66,6 +68,8 @@ function App() {
           <Route path={SINGLEPRODUCT} component={Product} />
 
           <Route path={CART} component={Cart} />
+
+          <Route path={CHECKOUT} component={Checkout} />
         </Switch>
       </Router>
       <ToastContainer />

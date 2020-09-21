@@ -13,3 +13,5 @@ export const RESETPASSWORD = "/resetpassword";
 export const SINGLEPRODUCT = "/product/:id";
 
 export const CART = "/cart";
+
+export const CHECKOUT = "/checkout";
