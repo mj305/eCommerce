@@ -5,9 +5,13 @@ import Layout from "../Layout";
 const CartComponent = () => {
   const [cart, setCart] = useState([]);
 
-  const { increaseCount, decreaseCount, fetchCartItems, items } = useContext(
-    cartContext
-  );
+  const {
+    increaseCount,
+    decreaseCount,
+    fetchCartItems,
+    items,
+    deleteProduct,
+  } = useContext(cartContext);
 
   useEffect(() => {
     fetchCartItems();
@@ -30,16 +34,23 @@ const CartComponent = () => {
         <button onClick={() => decreaseCount(value)}>-</button>
         <div>{value.count}</div>
         <button onClick={() => increaseCount(value)}>+</button>
+        <button onClick={() => deleteProduct(value)}>Delete</button>
         <p> ${productTotal} </p>
       </>
     );
   });
+  console.log(items);
 
   return (
     <Layout>
       <h1>Cart</h1>
       <div>{results}</div>
-      <div>Grand Total ${subTotal} </div>
+      {items.length ? (
+        <div>Grand Total ${subTotal}</div>
+      ) : (
+        "Nothing in the cart"
+      )}
+      {items.length ? <button>Checkout</button> : null}
     </Layout>
   );
 };

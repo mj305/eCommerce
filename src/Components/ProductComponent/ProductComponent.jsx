@@ -41,7 +41,7 @@ const ProductComponent = () => {
               </figure>
             </div>
 
-            <div className="card-content">
+            <div className={`card-content ${styles.cardContent}`}>
               <div className="media">
                 <div className="media-content">
                   <Link className={`title is-4 ${styles.cardGroup}`}>

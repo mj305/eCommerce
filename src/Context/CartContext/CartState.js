@@ -97,13 +97,25 @@ const CartState = (props) => {
   const decreaseCount = (data) => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const objIndex = cart.findIndex((obj) => obj.id === data.id);
+    console.log(cart[objIndex].count);
 
-    //Update object's name property.
-    cart[objIndex].count -= 1;
+    if (cart[objIndex].count >= 1) {
+      cart[objIndex].count = 1;
+      console.log("After update: ", cart[objIndex]);
+      localStorage.setItem("cart", JSON.stringify(cart));
 
-    //Log object to console again.
-    console.log("After update: ", cart[objIndex]);
-    localStorage.setItem("cart", JSON.stringify(cart));
+      fetchCartItems();
+    }
+  };
+
+  const deleteProduct = (data) => {
+    console.log("deleted");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const filtered = cart.filter((item) => {
+      return item.id !== data.id;
+    });
+    localStorage.setItem("cart", JSON.stringify(filtered));
 
     fetchCartItems();
   };
@@ -120,6 +132,7 @@ const CartState = (props) => {
         countCartItems,
         decreaseCount,
         increaseCount,
+        deleteProduct,
       }}
     >
       {props.children}

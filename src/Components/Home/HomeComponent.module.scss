@@ -7,11 +7,10 @@
   font-size: 5rem;
   font-weight: 550;
   text-align: center;
-  align-self: center;
   opacity: 0%;
-  /* margin-bottom: 2rem; */
-  margin-top: -4rem;
-  padding-bottom: 30rem;
+  margin: auto;
+  height: 90vh;
+
   -webkit-animation: homeContainer 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: homeContainer 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
