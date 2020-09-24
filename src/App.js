@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-/* import ProtectedRoute from "./Routes/ProtectedRoute"; */
 import UnprotectedRoute from "./Routes/UnprotectedRoute";
 
 import authContext from "./Context/AuthContext/authContext";
@@ -15,6 +14,8 @@ import ResetPassword from "./Pages/ResetPassword";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import Checkout from "./Pages/Checkout";
+import PaymentSuccess from "./Pages/PaymentSuccess";
+import PaymentCancell from "./Pages/PaymentCancell";
 
 import {
   HOME,
@@ -26,6 +27,8 @@ import {
   SINGLEPRODUCT,
   CART,
   CHECKOUT,
+  PAYMENTSUCCESS,
+  PAYMENTCANCELL,
 } from "./Routes";
 
 import "react-bulma-components/dist/react-bulma-components.min.css";
@@ -70,6 +73,10 @@ function App() {
           <Route path={CART} component={Cart} />
 
           <Route path={CHECKOUT} component={Checkout} />
+
+          <Route path={PAYMENTSUCCESS} component={PaymentSuccess} />
+
+          <Route path={PAYMENTCANCELL} component={PaymentCancell} />
         </Switch>
       </Router>
       <ToastContainer />
