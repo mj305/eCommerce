@@ -13,7 +13,6 @@ import ForgotPassword from "./Pages/ForgotPassword";
 import ResetPassword from "./Pages/ResetPassword";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
-import Checkout from "./Pages/Checkout";
 import PaymentSuccess from "./Pages/PaymentSuccess";
 import PaymentCancell from "./Pages/PaymentCancell";
 
@@ -26,7 +25,6 @@ import {
   RESETPASSWORD,
   SINGLEPRODUCT,
   CART,
-  CHECKOUT,
   PAYMENTSUCCESS,
   PAYMENTCANCELL,
 } from "./Routes";
@@ -71,8 +69,6 @@ function App() {
           <Route path={SINGLEPRODUCT} component={Product} />
 
           <Route path={CART} component={Cart} />
-
-          <Route path={CHECKOUT} component={Checkout} />
 
           <Route path={PAYMENTSUCCESS} component={PaymentSuccess} />
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import cartContext from "../../Context/CartContext/cartContext";
 import Layout from "../Layout";
+import Checkout from "../Checkout";
 
 const CartComponent = () => {
   const [cart, setCart] = useState([]);
@@ -50,7 +51,7 @@ const CartComponent = () => {
       ) : (
         "Nothing in the cart"
       )}
-      {items.length ? <button>Checkout</button> : null}
+      {items.length ? <Checkout items={items} subTotal={subTotal} /> : null}
     </Layout>
   );
 };

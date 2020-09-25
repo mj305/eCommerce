@@ -1,12 +1,15 @@
 import React from "react";
-import Layout from "../Layout";
+import axios from "axios";
 
 import { loadStripe } from "@stripe/stripe-js";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe("pk_test_ROFzZa3e3AXOVW3PRXq481qy");
 
-const CheckoutComponent = () => {
+const CheckoutComponent = ({ subTotal, items }) => {
+  console.log("Items: ", items);
+  console.log("SubTotal: ", subTotal);
+
   const handleClick = async (event) => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
@@ -14,6 +17,7 @@ const CheckoutComponent = () => {
     // Call your backend to create the Checkout Session
     const response = await fetch("http://localhost:4000/checkout", {
       method: "POST",
+      body: JSON.stringify({ items: "random thing" }),
     });
 
     const session = await response.json();
@@ -31,12 +35,9 @@ const CheckoutComponent = () => {
   };
 
   return (
-    <Layout>
-      <h1>Checkout Component</h1>
-      <button role="link" onClick={handleClick}>
-        Checkout
-      </button>
-    </Layout>
+    <button role="link" onClick={handleClick}>
+      Checkout
+    </button>
   );
 };
 

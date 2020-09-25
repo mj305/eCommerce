@@ -14,8 +14,6 @@ export const SINGLEPRODUCT = "/product/:id";
 
 export const CART = "/cart";
 
-export const CHECKOUT = "/checkout";
-
 export const PAYMENTSUCCESS = "/paymentsuccess";
 
 export const PAYMENTCANCELL = "/paymentcancell";
