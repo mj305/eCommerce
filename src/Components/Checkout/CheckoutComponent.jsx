@@ -12,25 +12,37 @@ const CheckoutComponent = ({ subTotal, items }) => {
 
   const handleClick = async (event) => {
     // Get Stripe.js instance
-    const stripe = await stripePromise;
+    try {
+      const stripe = await stripePromise;
 
-    // Call your backend to create the Checkout Session
-    const response = await fetch("http://localhost:4000/checkout", {
+      const response = await axios({
+        method: "POST",
+        url: "http://localhost:4000/checkout",
+        data: {
+          items,
+          subTotal,
+        },
+      });
+      console.log(response);
+
+      // Call your backend to create the Checkout Session
+      /* const response = await axios("http://localhost:4000/checkout", {
       method: "POST",
       body: JSON.stringify({ items: "random thing" }),
-    });
+    }); */
 
-    const session = await response.json();
+      // When the customer clicks on the button, redirect them to Checkout.
+      const result = await stripe.redirectToCheckout({
+        sessionId: response.data.id,
+      });
 
-    // When the customer clicks on the button, redirect them to Checkout.
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
-
-    if (result.error) {
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `result.error.message`.
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      }
+    } catch (error) {
+      console.log("Error: ", error);
     }
   };
 
