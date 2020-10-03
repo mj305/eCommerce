@@ -4,7 +4,7 @@ import Layout from "../Layout";
 import Checkout from "../Checkout";
 
 const CartComponent = () => {
-  const [cart, setCart] = useState([]);
+  /*  const [cart, setCart] = useState([]); */
 
   const {
     increaseCount,
