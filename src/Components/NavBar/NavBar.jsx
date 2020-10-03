@@ -86,7 +86,7 @@ const NavBar = () => {
                     </div>
 
                     <div>
-                      <Link to="/cart">
+                      <Link to="/cart" className={` ${styles.cartIcon}`}>
                         <i className="fas fa-shopping-cart"></i>
                         {countCartItems()}
                       </Link>
