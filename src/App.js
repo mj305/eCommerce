@@ -31,8 +31,8 @@ import {
 
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import CartComponent from "./Components/Cart";
-
+/* import CartComponent from "./Components/Cart";
+ */
 function App() {
   const { verifyAuth, isAuthenticated, loading } = useContext(authContext);
 

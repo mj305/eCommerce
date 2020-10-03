@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
-import axios from "axios";
-import { CART_REQUEST, CART_SUCCESS, CART_FAILURE } from "./types";
+/* import axios from "axios";
+ */ import { CART_REQUEST, CART_SUCCESS, CART_FAILURE } from "./types";
 
 import cartReducer from "./cartReducer";
 import cartContext from "./cartContext";

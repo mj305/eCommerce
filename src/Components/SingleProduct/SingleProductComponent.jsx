@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import CartContext from "../../Context/CartContext/cartContext";
+import authContext from "../../Context/AuthContext/authContext";
 
 import Layout from "../Layout";
 
@@ -9,6 +11,8 @@ import styles from "./SingleProductComponent.module.scss";
 import sugarScrub from "./sugarScrub.png";
 
 const SingleProductComponent = () => {
+  const { isAuthenticated } = useContext(authContext);
+  const history = useHistory();
   const { addToCart, loading } = useContext(CartContext);
   const [product, setProduct] = useState({});
   const { id } = useParams();
@@ -16,7 +20,13 @@ const SingleProductComponent = () => {
   const [count, setCount] = useState(1);
 
   const handleCart = () => {
-    addToCart(product, count);
+    if (!isAuthenticated) {
+      history.push("/login");
+      toast("Please Login to Add to Cart!");
+    } else {
+      addToCart(product, count);
+      toast.success("Product Added to Cart!");
+    }
   };
 
   const handleIncrease = () => {

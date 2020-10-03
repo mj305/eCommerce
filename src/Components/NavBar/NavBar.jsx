@@ -74,13 +74,24 @@ const NavBar = () => {
             <div className="navbar-item">
               <div className="buttons">
                 {isAuthenticated ? (
-                  <Link
-                    to="/"
-                    onClick={logOut}
-                    className={`button ${styles.signupButton}`}
-                  >
-                    <strong>Logout</strong>
-                  </Link>
+                  <>
+                    <div>
+                      <Link
+                        to="/"
+                        onClick={logOut}
+                        className={`button ${styles.signupButton}`}
+                      >
+                        <strong>Logout</strong>
+                      </Link>
+                    </div>
+
+                    <div>
+                      <Link to="/cart" className={` ${styles.cartIcon}`}>
+                        <i className="fas fa-shopping-cart"></i>
+                        {countCartItems()}
+                      </Link>
+                    </div>
+                  </>
                 ) : (
                   <>
                     <Link
@@ -96,11 +107,6 @@ const NavBar = () => {
                     >
                       Login
                     </Link>
-
-                    <Link to="/cart" className={` ${styles.cartIcon}`}>
-                      <i class="fas fa-shopping-cart"></i>
-                      {countCartItems()}
-                    </Link>
                   </>
                 )}
               </div>
@@ -113,3 +119,21 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+/*                     <Link to="/cart" className={` ${styles.cartIcon}`}>
+                      <i class="fas fa-shopping-cart"></i>
+                      {countCartItems()}
+                    </Link> */
+
+/*                     <button
+                      to="/"
+                      onClick={logOut}
+                      className={`button ${styles.signupButton}`}
+                    >
+                      <strong>Logout</strong>
+                    </button>
+
+                    <Link to="/cart" className={` ${styles.cartIcon}`}>
+                      <i class="fas fa-shopping-cart"></i>
+                      {countCartItems()}
+                    </Li */
