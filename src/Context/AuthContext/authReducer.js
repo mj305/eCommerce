@@ -34,7 +34,7 @@ export default (state, { type, payload }) => {
         ...state,
         isAuthenticated: false,
         user: null,
-        loading: true,
+        loading: false,
         errors: payload,
       };
     case LOGIN_SUCCESS:
@@ -50,7 +50,7 @@ export default (state, { type, payload }) => {
         ...state,
         isAuthenticated: false,
         user: null,
-        loading: true,
+        loading: false,
         errors: payload,
       };
     case NOT_LOGGEDIN:

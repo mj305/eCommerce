@@ -71,6 +71,9 @@ const LoginComponent = () => {
             Submit
           </button>
           <div>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+          <div>
             <Link to="/forgotpassword">Forgot Password</Link>
           </div>
         </form>
