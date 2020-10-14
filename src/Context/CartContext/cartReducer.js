@@ -1,4 +1,4 @@
-import { CART_REQUEST, CART_SUCCESS, CART_FAILURE, CART_COUNT } from "./types";
+import { CART_REQUEST, CART_SUCCESS, CART_FAILURE } from "./types";
 
 export default (state, { type, payload, countPayload }) => {
   switch (type) {

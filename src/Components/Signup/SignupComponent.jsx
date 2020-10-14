@@ -11,7 +11,7 @@ import Layout from "../Layout";
 import styles from "./SignupComponent.module.scss";
 
 const SignupComponent = () => {
-  const { signUp, loading, errors } = useContext(authContext);
+  const { signUp, errors } = useContext(authContext);
 
   const { register, handleSubmit /* , errors */ } = useForm(); // initialise the hook
   const onSubmit = (data) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import cartContext from "../../Context/CartContext/cartContext";
 import Layout from "../Layout";
 import Checkout from "../Checkout";

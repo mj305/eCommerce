@@ -13,7 +13,7 @@ import sugarScrub from "./sugarScrub.png";
 const SingleProductComponent = () => {
   const { isAuthenticated } = useContext(authContext);
   const history = useHistory();
-  const { addToCart, loading } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   const [product, setProduct] = useState({});
   const { id } = useParams();
 
@@ -69,7 +69,11 @@ const SingleProductComponent = () => {
       <Layout>
         <div className={`${styles.productContainer}`}>
           <div>
-            <img src={sugarScrub} className={`${styles.productImage}`} />
+            <img
+              src={sugarScrub}
+              alt="sugar-scrub-product-thumbnail"
+              className={`${styles.productImage}`}
+            />
           </div>
 
           <div className={`${styles.textContainer}`}>

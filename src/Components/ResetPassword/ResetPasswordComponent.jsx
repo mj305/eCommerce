@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { useForm } from "react-hook-form";
 
@@ -6,11 +6,7 @@ import Layout from "../Layout";
 
 import styles from "./ResetPasswordComponent.module.scss";
 
-import authContext from "../../Context/AuthContext/authContext";
-import { registerVersion } from "firebase";
-
 const ResetPasswordComponent = () => {
-  const { passwordResetEmail } = useContext(authContext);
   const { handleSubmit, register } = useForm(); // initialise the hook
   const onSubmit = (data) => {
     console.log(data);

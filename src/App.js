@@ -14,7 +14,6 @@ import ResetPassword from "./Pages/ResetPassword";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import PaymentSuccess from "./Pages/PaymentSuccess";
-import PaymentCancell from "./Pages/PaymentCancell";
 
 import {
   HOME,
@@ -26,7 +25,6 @@ import {
   SINGLEPRODUCT,
   CART,
   PAYMENTSUCCESS,
-  PAYMENTCANCELL,
 } from "./Routes";
 
 import "react-bulma-components/dist/react-bulma-components.min.css";
@@ -71,8 +69,6 @@ function App() {
           <Route path={CART} component={Cart} />
 
           <Route path={PAYMENTSUCCESS} component={PaymentSuccess} />
-
-          <Route path={PAYMENTCANCELL} component={PaymentCancell} />
         </Switch>
       </Router>
       <ToastContainer />

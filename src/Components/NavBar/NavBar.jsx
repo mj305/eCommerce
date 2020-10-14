@@ -39,31 +39,31 @@ const NavBar = () => {
 
         <div className="navbar-menu">
           <div className={`navbar-start`}>
-            <Link to="#" className={`navbar-item`}>
+            <Link to="#" className={`navbar-item ${styles.navbarItem}`}>
               Our Services
             </Link>
 
-            <Link to="#" className={`navbar-item`}>
+            <Link to="#" className={`navbar-item ${styles.navbarItem}`}>
               Best Sellers
             </Link>
 
             <div className="navbar-item has-dropdown is-hoverable">
-              <Link to="#" className={`navbar-link`}>
+              <Link to="#" className={`navbar-link ${styles.navbarItem}`}>
                 More
               </Link>
 
               <div className="navbar-dropdown">
-                <Link to="#" className={`navbar-item`}>
+                <Link to="#" className={`navbar-item ${styles.navbarItem}`}>
                   About
                 </Link>
-                <Link to="#" className={`navbar-item`}>
+                <Link to="#" className={`navbar-item ${styles.navbarItem}`}>
                   Jobs
                 </Link>
-                <Link to="#" className={`navbar-item`}>
+                <Link to="#" className={`navbar-item ${styles.navbarItem}`}>
                   Contact
                 </Link>
                 <hr className="navbar-divider" />
-                <Link to="#" className={`navbar-item`}>
+                <Link to="#" className={`navbar-item ${styles.navbarItem}`}>
                   Report an issue
                 </Link>
               </div>
