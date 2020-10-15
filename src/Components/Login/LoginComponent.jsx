@@ -80,10 +80,10 @@ const LoginComponent = () => {
               Login
             </button>
           </div>
-          <div className={`${styles.formLogin}`}>
+          <div className={`${styles.loginFormLink}`}>
             <Link to="/signup">Sign Up</Link>
           </div>
-          <div className={`${styles.formLogin}`}>
+          <div className={`${styles.loginFormLink}`}>
             <Link to="/forgotpassword">Forgot Password</Link>
           </div>
         </form>

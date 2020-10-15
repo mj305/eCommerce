@@ -42,33 +42,34 @@
   cursor: pointer;
 }
 
-.formLogin {
+.loginFormLink {
   line-height: 3rem;
-  color: black;
+  color: black !important;
   font-size: 1.7rem;
   text-align: center;
 }
 
-.formLogin:active {
-  color: black;
+.loginFormLink:active {
+  color: black !important;
 }
 
-.formLogin:visited {
-  color: black;
+.loginFormLink:visited {
+  color: black !important;
 }
 
-.formLogin:hover {
-  color: #eda245 !important;
+.loginFormLink:hover {
+  color: #eda245;
 }
 
-a:active {
-  color: black;
-}
-
+a:link,
 a:visited {
   color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-a:hover {
-  color: #eda245 !important;
+a:hover,
+a:active {
+  color: #eda245;
 }

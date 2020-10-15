@@ -98,7 +98,7 @@ const SignupComponent = () => {
           <button type="submit" className={`${styles.submitButton}`}>
             Sign Up
           </button>
-          <div className={`${styles.formLogin}`}>
+          <div className={`${styles.signUpLogin}`}>
             <Link to="/login">Login</Link>
           </div>
         </form>
