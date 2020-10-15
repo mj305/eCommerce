@@ -57,6 +57,7 @@ const CartState = (props) => {
       title: product.data.name,
       count,
       price: product.data.price,
+      image: product.data.image,
     };
     SaveDataToLocalStorage(cart);
     dispatch({

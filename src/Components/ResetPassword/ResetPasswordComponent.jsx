@@ -7,7 +7,7 @@ import Layout from "../Layout";
 import styles from "./ResetPasswordComponent.module.scss";
 
 const ResetPasswordComponent = () => {
-  const { handleSubmit, register } = useForm(); // initialise the hook
+  const { handleSubmit } = useForm(); // initialise the hook
   const onSubmit = (data) => {
     console.log(data);
   };

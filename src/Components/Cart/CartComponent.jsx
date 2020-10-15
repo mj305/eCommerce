@@ -5,8 +5,6 @@ import Checkout from "../Checkout";
 
 import styles from "./CartComponent.module.scss";
 
-import sugarScrub from "./sugarScrub.png";
-
 const CartComponent = () => {
   const {
     increaseCount,
@@ -18,11 +16,12 @@ const CartComponent = () => {
 
   useEffect(() => {
     fetchCartItems();
-  }, []);
+  }, [fetchCartItems]);
 
   let subTotal = 0;
 
   const results = items.map((value) => {
+    console.log(value);
     const productTotal = value.price * value.count;
     subTotal += productTotal;
 
@@ -30,7 +29,7 @@ const CartComponent = () => {
       <div className={`${styles.cartItemContainer}`}>
         <div>
           <img
-            src={sugarScrub}
+            src={value.image}
             className={`${styles.cartItemImage}`}
             alt="product-image-thumbnail"
           />
@@ -51,12 +50,12 @@ const CartComponent = () => {
           >
             +
           </button>
-          {/*           <button
+          <button
             className={`${styles.cartItemData}`}
             onClick={() => deleteProduct(value)}
           >
             Delete
-          </button> */}
+          </button>
 
           <p> ${productTotal} </p>
         </div>

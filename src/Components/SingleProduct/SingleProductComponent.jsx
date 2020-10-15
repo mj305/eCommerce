@@ -50,16 +50,19 @@ const SingleProductComponent = () => {
     };
     fetchProduct();
   }, []);
-  console.log(product);
 
   let prodDisplayed;
   let priceDisplayed;
   let descriptionDisplayed;
+  let imageDisplay;
 
   if (product.data) {
     prodDisplayed = <p> {product.data.name} </p>;
-    priceDisplayed = <p> {product.data.price} </p>;
+    priceDisplayed = <p> ${product.data.price} </p>;
     descriptionDisplayed = <p> {product.data.description} </p>;
+    imageDisplay = (
+      <img className={`${styles.productImage}`} src={product.data.image} />
+    );
   } else {
     prodDisplayed = <p> Product Not Found </p>;
   }
@@ -68,13 +71,7 @@ const SingleProductComponent = () => {
     <>
       <Layout>
         <div className={`${styles.productContainer}`}>
-          <div>
-            <img
-              src={sugarScrub}
-              alt="sugar-scrub-product-thumbnail"
-              className={`${styles.productImage}`}
-            />
-          </div>
+          <div>{imageDisplay}</div>
 
           <div className={`${styles.textContainer}`}>
             <h1 className={`${styles.textHeader}`}> {prodDisplayed} </h1>

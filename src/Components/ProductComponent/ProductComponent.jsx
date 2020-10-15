@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 
 import styles from "./ProductComponent.module.scss";
 
-import sugarScrub from "./sugarScrub.png";
-
 const ProductComponent = () => {
   const [product, setProduct] = useState({
     data: [
@@ -37,7 +35,7 @@ const ProductComponent = () => {
           <div className={`card ${styles.cardContainer}`}>
             <div className="card-image">
               <figure className="image is-4by3">
-                <img src={sugarScrub} alt="" />
+                <img src={value.image} alt="" />
               </figure>
             </div>
 
