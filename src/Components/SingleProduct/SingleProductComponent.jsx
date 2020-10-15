@@ -8,8 +8,6 @@ import Layout from "../Layout";
 
 import styles from "./SingleProductComponent.module.scss";
 
-import sugarScrub from "./sugarScrub.png";
-
 const SingleProductComponent = () => {
   const { isAuthenticated } = useContext(authContext);
   const history = useHistory();
@@ -49,7 +47,7 @@ const SingleProductComponent = () => {
         .catch((error) => console.log("Error: ", error));
     };
     fetchProduct();
-  }, []);
+  });
 
   let prodDisplayed;
   let priceDisplayed;
@@ -61,7 +59,11 @@ const SingleProductComponent = () => {
     priceDisplayed = <p> ${product.data.price} </p>;
     descriptionDisplayed = <p> {product.data.description} </p>;
     imageDisplay = (
-      <img className={`${styles.productImage}`} src={product.data.image} />
+      <img
+        className={`${styles.productImage}`}
+        src={product.data.image}
+        alt="jar-product-container-thumbnail"
+      />
     );
   } else {
     prodDisplayed = <p> Product Not Found </p>;

@@ -31,7 +31,7 @@ const CartComponent = () => {
           <img
             src={value.image}
             className={`${styles.cartItemImage}`}
-            alt="product-image-thumbnail"
+            alt="product-container-thumbnail"
           />
         </div>
         <div className={`${styles.cartItemDataContainer}`}>
