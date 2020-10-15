@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
+import AOS from "aos";
+
 import styles from "./ProductComponent.module.scss";
 
 const ProductComponent = () => {
@@ -31,7 +33,12 @@ const ProductComponent = () => {
   const results = product.data.map((value) => {
     return (
       <Link to={`/product/${value._id}`}>
-        <div className={` ${styles.rotatePicture} ${styles.cardsContainer}`}>
+        <div
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="1500"
+          className={`${styles.imageZoonInAnimation} ${styles.cardsContainer}`}
+        >
           <div className={`card ${styles.cardContainer}`}>
             <div className="card-image">
               <figure className="image is-4by3">
@@ -48,8 +55,14 @@ const ProductComponent = () => {
                 </div>
               </div>
 
-              <div className="content"> {value.description} </div>
-              <div className="content"> {value.price} </div>
+              <div className={`content ${styles.cardGroupText}`}>
+                {" "}
+                {value.description}{" "}
+              </div>
+              <div className={`content ${styles.cardGroupText}`}>
+                {" "}
+                ${value.price}{" "}
+              </div>
             </div>
           </div>
         </div>
@@ -61,35 +74,3 @@ const ProductComponent = () => {
 };
 
 export default ProductComponent;
-
-/* 
-        <div className={`${styles.cardsContainer}`}>
-          <div className={`card ${styles.cardContainer}`}>
-            <div className="card-image">
-              <figure className="image is-4by3">
-                <img src={sugarScrub} alt="" />
-              </figure>
-            </div>
-
-            <div className="card-content">
-              <div className="media">
-                <div className="media-content">
-                  <Link className={`title is-4 ${styles.cardGroup}`}>
-                    {value.name}
-                  </Link>
-                </div>
-              </div>
-
-              <div className="content"> {value.price} </div>
-            </div>
-          </div>
-        </div>
-*/
-
-/* 
-
-
-        <div>{value.name}</div>
-        <div> {value.price} </div>
-        
-        */
