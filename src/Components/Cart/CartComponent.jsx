@@ -35,29 +35,37 @@ const CartComponent = () => {
           />
         </div>
         <div className={`${styles.cartItemDataContainer}`}>
-          <p className={`${styles.cartItemData}`}> Product {value.title} </p>
-          <p className={`${styles.cartItemData}`}> Price ${value.price} </p>
-          <button
-            className={`${styles.cartItemData}`}
-            onClick={() => decreaseCount(value)}
-          >
-            -
-          </button>
-          <div className={`${styles.cartItemData}`}>{value.count}</div>
-          <button
-            className={`${styles.cartItemData}`}
-            onClick={() => increaseCount(value)}
-          >
-            +
-          </button>
-          <button
-            className={`${styles.cartItemData}`}
-            onClick={() => deleteProduct(value)}
-          >
-            Delete
-          </button>
+          <div className={`${styles.cartItemBoxText}`}>
+            <div>
+              {/* Product Name */}
+              <p className={`${styles.cartItemData}`}> {value.title} </p>
+              {/* Delete Item Button */}
+              <button
+                className={`${styles.cartItemDelete}`}
+                onClick={() => deleteProduct(value)}
+              >
+                Delete
+              </button>
+            </div>
+            {/* <p className={`${styles.cartItemData}`}> Price ${value.price} </p> */}
+            {/* Increase | Decrease Product Quantity */}
 
-          <p> ${productTotal} </p>
+            <button
+              className={`${styles.cartEditQuantity}`}
+              onClick={() => decreaseCount(value)}
+            >
+              -
+            </button>
+            <div className={`${styles.cartItemData}`}>{value.count}</div>
+            <button
+              className={`${styles.cartEditQuantity}`}
+              onClick={() => increaseCount(value)}
+            >
+              +
+            </button>
+
+            <p> ${productTotal} </p>
+          </div>
         </div>
       </div>
     );
@@ -76,10 +84,12 @@ const CartComponent = () => {
           <div className={`${styles.cartTotalContainer}`}>
             {items.length ? (
               <div className={`${styles.cartTotalText}`}>
-                Grand Total ${subTotal}
+                Sub Total ${subTotal}
               </div>
             ) : (
-              "Nothing in the cart"
+              <div className={`${styles.emptyCartText}`}>
+                <h4> You Don't Have Any Items in the Cart!</h4>
+              </div>
             )}
             {/* STRIPE BELOW */}
             {items.length ? (
