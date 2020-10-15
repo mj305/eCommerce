@@ -50,7 +50,8 @@
 }
 
 .cartIcon {
-  font-size: 1.2rem;
+  margin: auto 2rem auto 2rem;
+  font-size: 1.5rem;
   text-align: center;
   align-content: center;
   color: #f6ab6c;
@@ -59,8 +60,13 @@
 
 .cartIcon:hover {
   color: #fecb89;
+  transform: translateY(1px);
 }
 
 .cartIcon:active {
-  transform: translateY(1px);
+  color: #f6ab6c;
+}
+
+.cartIcon:visited {
+  color: #f6ab6c;
 }
