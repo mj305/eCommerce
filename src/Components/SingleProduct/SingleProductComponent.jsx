@@ -47,7 +47,7 @@ const SingleProductComponent = () => {
         .catch((error) => console.log("Error: ", error));
     };
     fetchProduct();
-  });
+  }, []);
 
   let prodDisplayed;
   let priceDisplayed;

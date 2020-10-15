@@ -16,7 +16,7 @@ const CartComponent = () => {
 
   useEffect(() => {
     fetchCartItems();
-  }, [fetchCartItems]);
+  }, []);
 
   let subTotal = 0;
 

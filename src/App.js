@@ -36,7 +36,7 @@ function App() {
 
   useEffect(() => {
     verifyAuth();
-  }, [verifyAuth]);
+  }, []);
 
   return (
     <>
