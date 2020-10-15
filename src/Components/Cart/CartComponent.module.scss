@@ -1,0 +1,43 @@
+.cartContainer {
+  margin-top: 5rem;
+}
+
+.cartHeaderHeder {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.cartItemContainer {
+  display: flex;
+  padding: 0.5rem;
+  margin: 1rem auto 1rem auto;
+  background-color: #f6f6f6;
+  width: 80vw;
+}
+
+.cartItemImage {
+  width: 10rem;
+  margin: auto 1rem auto 1rem;
+}
+
+.cartItemDataContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cartItemData {
+  margin-right: 10rem;
+  font-size: 1.2rem;
+}
+
+.cartTotalContainer {
+  text-align: right;
+  font-size: 1.5rem;
+  margin: 2rem 12rem 8rem auto;
+}
+
+.cartTotalText {
+  color: #eda245;
+  font-weight: 600;
+}

@@ -3,9 +3,11 @@ import cartContext from "../../Context/CartContext/cartContext";
 import Layout from "../Layout";
 import Checkout from "../Checkout";
 
-const CartComponent = () => {
-  /*  const [cart, setCart] = useState([]); */
+import styles from "./CartComponent.module.scss";
 
+import sugarScrub from "./sugarScrub.png";
+
+const CartComponent = () => {
   const {
     increaseCount,
     decreaseCount,
@@ -16,42 +18,77 @@ const CartComponent = () => {
 
   useEffect(() => {
     fetchCartItems();
-    /*     setCart(JSON.parse(localStorage.getItem("cart")) || []);
-     */
   }, []);
 
   let subTotal = 0;
 
   const results = items.map((value) => {
-    console.log(value);
     const productTotal = value.price * value.count;
     subTotal += productTotal;
 
     return (
-      <>
-        <p> Product {value.title} </p>
-        <p> Price {value.price} </p>
-        <p> Quantity </p>
-        <button onClick={() => decreaseCount(value)}>-</button>
-        <div>{value.count}</div>
-        <button onClick={() => increaseCount(value)}>+</button>
-        <button onClick={() => deleteProduct(value)}>Delete</button>
-        <p> ${productTotal} </p>
-      </>
+      <div className={`${styles.cartItemContainer}`}>
+        <div>
+          <img
+            src={sugarScrub}
+            className={`${styles.cartItemImage}`}
+            alt="product-image-thumbnail"
+          />
+        </div>
+        <div className={`${styles.cartItemDataContainer}`}>
+          <p className={`${styles.cartItemData}`}> Product {value.title} </p>
+          <p className={`${styles.cartItemData}`}> Price ${value.price} </p>
+          <button
+            className={`${styles.cartItemData}`}
+            onClick={() => decreaseCount(value)}
+          >
+            -
+          </button>
+          <div className={`${styles.cartItemData}`}>{value.count}</div>
+          <button
+            className={`${styles.cartItemData}`}
+            onClick={() => increaseCount(value)}
+          >
+            +
+          </button>
+          {/*           <button
+            className={`${styles.cartItemData}`}
+            onClick={() => deleteProduct(value)}
+          >
+            Delete
+          </button> */}
+
+          <p> ${productTotal} </p>
+        </div>
+      </div>
     );
   });
-  console.log(items);
 
   return (
     <Layout>
-      <h1>Cart</h1>
-      <div>{results}</div>
-      {items.length ? (
-        <div>Grand Total ${subTotal}</div>
-      ) : (
-        "Nothing in the cart"
-      )}
-      {items.length ? <Checkout items={items} subTotal={subTotal} /> : null}
+      <div className={`${styles.cartContainer}`}>
+        <div>
+          <h3 className={`${styles.cartHeaderHeder}`}>Cart</h3>
+        </div>
+
+        <div>
+          <div>{results}</div>
+          <hr />
+          <div className={`${styles.cartTotalContainer}`}>
+            {items.length ? (
+              <div className={`${styles.cartTotalText}`}>
+                Grand Total ${subTotal}
+              </div>
+            ) : (
+              "Nothing in the cart"
+            )}
+            {/* STRIPE BELOW */}
+            {items.length ? (
+              <Checkout items={items} subTotal={subTotal} />
+            ) : null}
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

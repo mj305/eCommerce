@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import styles from "./CheckoutComponent.module.scss";
+
 import { loadStripe } from "@stripe/stripe-js";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -47,7 +49,11 @@ const CheckoutComponent = ({ subTotal, items }) => {
   };
 
   return (
-    <button role="link" onClick={handleClick}>
+    <button
+      className={`${styles.checkoutButton}`}
+      role="link"
+      onClick={handleClick}
+    >
       Checkout
     </button>
   );
