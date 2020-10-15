@@ -26,7 +26,7 @@ const Footer = () => {
               target="blank"
             >
               {" "}
-              Me{" "}
+              Maria Beckles{" "}
             </a>
           </p>
         </div>

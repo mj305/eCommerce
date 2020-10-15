@@ -1,5 +1,68 @@
+.signupHeaderContainer {
+  text-align: center;
+  line-height: 4.5rem;
+}
+
+.signupHeaderHeder {
+  font-size: 3rem;
+  margin-top: -23rem;
+}
+
+.signupHeaderParragraph {
+  font-size: 1.5rem;
+}
+
 .signupFormContainer {
-  border: dotted yellow .2rem;
-  width: 30%;
-  margin: 2rem auto;
+  /* border: solid 0.09rem #eda245; */
+  background-color: #fff8f1;
+  width: 50vw;
+  height: 65vh;
+  margin: 4rem auto 10rem auto;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.5);
+  padding-top: 1rem;
+}
+
+.formField {
+  width: 50%;
+  margin: 3rem auto;
+}
+
+.submitButton {
+  font-size: 2rem;
+  color: white;
+  background-color: #eda245;
+  border: white solid 0.01rem;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+
+  display: inline-block;
+  width: 50%;
+  height: 10%;
+  margin: 2rem auto 2rem 25%;
+  outline: none;
+}
+
+.submitButton:hover {
+  border: #fbe6d4 solid 0.01rem !important;
+  color: #fbe6d4 !important;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.formLogin {
+  color: black;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #eda245 !important;
 }
