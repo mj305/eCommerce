@@ -1,6 +1,74 @@
+.loginHeaderContainer {
+  font-size: 3rem;
+  margin-top: 0rem;
+  text-align: center;
+}
+
+.loginHeader {
+  margin-top: -19rem;
+}
+
 .loginFormContainer {
-  border: dotted yellow .2rem;
-  width: 30%;
-  margin: 2rem auto;
-  bottom: 0;
+  width: 50vw;
+  height: 65vh;
+  margin: auto auto 10rem auto;
+  padding-top: 1rem;
+}
+
+.formField {
+  width: 50%;
+  margin: 3rem auto;
+}
+
+.submitButton {
+  font-size: 2rem;
+  color: white;
+  background-color: #eda245;
+  border: white solid 0.01rem;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+
+  display: inline-block;
+  width: 50%;
+  height: 12%;
+  margin: 2rem auto 2rem 25%;
+  outline: none;
+}
+
+.submitButton:hover {
+  border: #fbe6d4 solid 0.01rem !important;
+  color: #fbe6d4 !important;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.formLogin {
+  line-height: 3rem;
+  color: black;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.formLogin:active {
+  color: black;
+}
+
+.formLogin:visited {
+  color: black;
+}
+
+.formLogin:hover {
+  color: #eda245 !important;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #eda245 !important;
 }
