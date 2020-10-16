@@ -47,6 +47,7 @@ const SingleProductComponent = () => {
         .catch((error) => console.log("Error: ", error));
     };
     fetchProduct();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let prodDisplayed;

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-import AOS from "aos";
-
 import styles from "./ProductComponent.module.scss";
 
 const ProductComponent = () => {

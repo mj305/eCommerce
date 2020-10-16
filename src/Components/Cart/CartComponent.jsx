@@ -16,6 +16,7 @@ const CartComponent = () => {
 
   useEffect(() => {
     fetchCartItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let subTotal = 0;

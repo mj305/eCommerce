@@ -1,5 +1,8 @@
 import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { ToastContainer } from "react-toastify";
 import UnprotectedRoute from "./Routes/UnprotectedRoute";
 
@@ -29,13 +32,15 @@ import {
 
 import "react-bulma-components/dist/react-bulma-components.min.css";
 import "react-toastify/dist/ReactToastify.css";
-/* import CartComponent from "./Components/Cart";
- */
+
+AOS.init();
+
 function App() {
   const { verifyAuth, isAuthenticated, loading } = useContext(authContext);
 
   useEffect(() => {
     verifyAuth();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
