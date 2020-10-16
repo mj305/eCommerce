@@ -41,7 +41,7 @@ const SingleProductComponent = () => {
 
   useEffect(() => {
     const fetchProduct = () => {
-      fetch(`http://localhost:4000/viewProduct/${id}`)
+      fetch(`${process.env.REACT_APP_API}/viewProduct/${id}`)
         .then((result) => result.json())
         .then((data) => setProduct(data))
         .catch((error) => console.log("Error: ", error));

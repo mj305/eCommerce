@@ -37,7 +37,7 @@ const AuthState = (props) => {
         console.log(result.user.uid);
 
         axios
-          .post("http://localhost:4000/signUp", {
+          .post(`${process.env.REACT_APP_API}/signUp`, {
             email: result.user.email,
             firebaseID: result.user.uid,
           })

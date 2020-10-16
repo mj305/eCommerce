@@ -16,22 +16,16 @@ const CheckoutComponent = ({ subTotal, items }) => {
     // Get Stripe.js instance
     try {
       const stripe = await stripePromise;
-
+      console.log(process.env.REACT_APP_API);
       const response = await axios({
         method: "POST",
-        url: "http://localhost:4000/checkout",
+        url: `${process.env.REACT_APP_API}/checkout`,
         data: {
           items,
           subTotal,
         },
       });
       console.log(response);
-
-      // Call your backend to create the Checkout Session
-      /* const response = await axios("http://localhost:4000/checkout", {
-      method: "POST",
-      body: JSON.stringify({ items: "random thing" }),
-    }); */
 
       // When the customer clicks on the button, redirect them to Checkout.
       const result = await stripe.redirectToCheckout({

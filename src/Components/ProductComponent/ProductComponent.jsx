@@ -20,7 +20,7 @@ const ProductComponent = () => {
 
   useEffect(() => {
     const fetchProduct = () => {
-      fetch(`http://localhost:4000/viewProduct`)
+      fetch(`${process.env.REACT_APP_API}/viewProduct`)
         .then((result) => result.json())
         .then((data) => setProduct(data))
         .catch((error) => console.log("Error: ", error));
