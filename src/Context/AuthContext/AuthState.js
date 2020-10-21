@@ -104,13 +104,21 @@ const AuthState = (props) => {
       .sendPasswordResetEmail(email)
       .then((response) => {
         console.log(response);
+        dispatch({ type: SIGNUP_FAILURE, payload: "Email Sent!" });
+        dispatch({ type: CLEAR_ERRORS });
         // Email sent.
       })
       .catch((error) => {
         console.log(error);
+        dispatch({ type: SIGNUP_FAILURE, payload: "Something Went Wrong..." });
+        dispatch({ type: CLEAR_ERRORS });
         // An error happened.
       });
   };
+
+  const clearErrors = () => {
+    dispatch({ type: CLEAR_ERRORS });
+  }
 
   return (
     <authContext.Provider
@@ -124,6 +132,7 @@ const AuthState = (props) => {
         logOut,
         verifyAuth,
         passwordResetEmail,
+        clearErrors,
       }}
     >
       {props.children}

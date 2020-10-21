@@ -3,19 +3,26 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 
 import authContext from "../../Context/AuthContext/authContext";
+import { toast } from "react-toastify";
 
 import Layout from "../Layout";
 
 import styles from "./ForgotPasswordComponent.module.scss";
 
 const ForgotPasswordComponent = () => {
-  const { passwordResetEmail } = useContext(authContext);
+  const { passwordResetEmail, errors } = useContext(authContext);
   const { register, handleSubmit } = useForm(); // initialise the hook
   const onSubmit = (data) => {
     console.log(data);
     passwordResetEmail(data.email);
   };
 
+  if (errors) {
+    console.log(errors)
+    toast(errors);
+  } 
+
+  
   return (
     <Layout>
       <div className={`${styles.loginHeaderContainer}`}>

@@ -19,7 +19,7 @@ const SignupComponent = () => {
   };
 
   if (errors) {
-    toast("User already exist");
+    toast(errors);
   }
 
   return (
