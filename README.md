@@ -1,7 +1,7 @@
 # eCommerce Store Prototipe
 
-## The Challenge
-Your challenge is to develop a new methodology or algorithm that leverages Earth observation and critical infrastructure datasets to estimate damages to infrastructure caused by flooding. Make a measurable impact on the resilience of nations by helping the Earth observations community contribute to the United Nations’ primary effort to reduce disaster risk!
+## About the App
+This is a simple eCommerce prototipe project. The user starts in the Home page and is able to see the store products, view the products details, add to cart, and checkout with Stripe. 
 
  [The Reign Experience Live App](https://thereignexperience.netlify.app/)
  
