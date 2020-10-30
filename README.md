@@ -21,7 +21,7 @@ $ yarn add node-sass
 
 
 ## React-Spring
--[React-Spring](https://www.react-spring.io/)
+- [React-Spring](https://www.react-spring.io/)
 ```
 npm install react-spring
 ```
